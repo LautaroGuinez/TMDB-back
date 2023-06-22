@@ -1,0 +1,22 @@
+{
+    "name": "TMDB BACK",
+    "version": "1.0.0",
+    "description": "Ayuraaaa toy chiquito",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "author": "Yop",
+    "license": "nohay :_",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "pg": "^8.11.0",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.31.1",
+        "volleyball": "^1.5.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
+}
