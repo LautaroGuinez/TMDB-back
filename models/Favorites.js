@@ -12,9 +12,6 @@ Favorites.init(
     URLimage: {
       type: Sequelize.STRING,
     },
-    description: {
-      type: Sequelize.TEXT,
-    },
   },
   {
     sequelize: db, // Conexión a la instancia de Sequelize (db)

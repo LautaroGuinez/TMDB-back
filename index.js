@@ -1,27 +1,26 @@
 const express = require("express");
 const app = express();
 const volleyball = require("volleyball");
-const cors = require("cors")
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const models = require("./models");
 const db = require("./db");
 const routes = require("./routes");
 
-
 const corsOptions = {
-  origin: 'http://localhost:3000', 
-  methods: ['GET', 'POST' , 'DELETE'], 
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "DELETE"],
+  credentials: true,
 };
 // logging middleware
 app.use(volleyball);
 app.use(cors(corsOptions));
-
+app.use(cookieParser());
 
 // parsing middleware
 app.use(express.json());
 
 app.use("/api", routes);
-
-
 
 // error middleware -> https://expressjs.com/es/guide/error-handling.html
 app.use((err, req, res, next) => {
@@ -30,7 +29,7 @@ app.use((err, req, res, next) => {
   res.status(500).send(err.message);
 });
 
-db.sync({force : false})
+db.sync({ force: false })
   .then(function () {
     console.log("Conecction success DB!!!");
     app.listen(3001, () =>
